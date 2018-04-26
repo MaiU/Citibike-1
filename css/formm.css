@@ -13,6 +13,13 @@ a:hover {
     color: #4286f4;
       text-shadow: none;
 }
+
+.two:link {
+  font-family: 'Helvetica', arial, sans-serif;
+  font-size: 20pt;
+    color: black;
+}
+
 body {
   background-color: #ffffff;
   text-align: center;
@@ -30,8 +37,8 @@ font-family: 'Helvetica', arial, sans-serif;
 
 }
 #bodyText{
-   padding-right: 100px;
-    padding-left: 100px;
+   padding-right: 150px;
+    padding-left: 150px;
   font-family: 'Helvetica', arial, sans-serif;
   background-color: #ffffff;
   color: black;
@@ -59,4 +66,11 @@ font-family: 'Helvetica', arial, sans-serif;
     position: relative;
     bottom: 40px;
     left: 16px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
