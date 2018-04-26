@@ -18,10 +18,12 @@ a.two:link {
   font-family: 'Helvetica', arial, sans-serif;
   font-size: 20pt;
     color: black;
+        text-shadow: none;
 }
 a.two:visited {
   font-family: 'Helvetica', arial, sans-serif;
     color: #253671;
+     text-shadow: none;
 }
 
 body {
