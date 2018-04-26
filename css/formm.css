@@ -14,10 +14,14 @@ a:hover {
       text-shadow: none;
 }
 
-.two:link {
+a.two:link {
   font-family: 'Helvetica', arial, sans-serif;
   font-size: 20pt;
     color: black;
+}
+a.two:visited {
+  font-family: 'Helvetica', arial, sans-serif;
+    color: #253671;
 }
 
 body {
