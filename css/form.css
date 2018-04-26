@@ -1,3 +1,18 @@
+a:link {
+  font-family: 'Helvetica', arial, sans-serif;
+  font-size: 20pt;
+    color: white;
+    text-shadow: 2px 2px #4286f4;
+}
+a:visited {
+  font-family: 'Helvetica', arial, sans-serif;
+    color: white;
+    text-shadow: 2px 2px #4286f4;
+}
+a:hover {
+    color: #4286f4;
+      text-shadow: none;
+}
 body {
   background-color: #ffffff;
   text-align: center;
@@ -5,7 +20,7 @@ body {
 }
 
 #title {
-  background-color: #253671; 
+  background-color: #253671;
 color: white;
 font-size: 25pt;
 text-align: center;
@@ -26,4 +41,19 @@ font-family: 'Helvetica', arial, sans-serif;
   height: 550px;
   width: 800px;
   margin: auto auto;
+}
+
+#container {
+      font-family: 'Helvetica', arial, sans-serif;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.bottom-left {
+    font-family: 'Helvetica', arial, sans-serif;
+  color: white;
+    position: relative;
+    bottom: 50px;
+    left: 16px;
 }
