@@ -80,3 +80,16 @@ font-family: 'Helvetica', arial, sans-serif;
     margin-right: auto;
     width: 50%;
 }
+
+
+#column {
+    float: left;
+    width: 60%;
+}
+
+#row:after {
+    content: "";
+    display: table;
+    clear: both;
+    width: 30%;
+}
