@@ -19,3 +19,6 @@ The interactive portion of the site gives users a chance to explore the complex 
 
 
 ![rider number](https://user-images.githubusercontent.com/35783893/39646168-8ca31d1c-4fa8-11e8-8ffe-b6a2a18ccb40.PNG)
+
+## Design Evolution
+![rider duration sketch](https://user-images.githubusercontent.com/35783893/39648744-4ba3ad3c-4fb1-11e8-8c82-3e708a55e43a.jpg)
