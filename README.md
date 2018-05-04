@@ -11,3 +11,6 @@ After the data was selected, it was reclassified and/or categorized using R. The
 
 
 ![method_graph](https://user-images.githubusercontent.com/35783893/39645153-58719634-4fa5-11e8-9bab-60632744a93a.png)
+## Interactivity 
+
+The interactive portion of the site gives users a chance to explore the complex data set on their own. The interface on the left allows them to enter in information about themselves and the ridinding conditions. Once the "Submit" button is pressed, the information is added to the regression equation. It will yeild a graphic of either the projected number of riders or the projected ride time to compare to the baseline numbers. The tool was created with JavaScript p5 and uses a series of DOM elements to input values into the equation. 
