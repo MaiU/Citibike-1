@@ -22,9 +22,14 @@ After the data was selected, it was reclassified and/or categorized using R. The
 
 ![method_graph](https://user-images.githubusercontent.com/35783893/39645153-58719634-4fa5-11e8-9bab-60632744a93a.png)
 
+Our final regression model can be found in the following link.
+[regression_model](final regression code.txt)
 ## Web Design
 
+[citibike_logo](img/CitiBike_Logo_.svg)
 The color scheme chosen for our website design was to mirror that of the CitiBike logo. What we generally wanted to present through our project was the background data on CitiBike users itself, the key findings from our regression, as well as a place for users to explore the data themselves. We wanted to refrain from displaying our results in long scrollable pages, hence our decision to split the project into different pages.  
+
+The website itself was coded using simple html and css. Our interactivity portion used JavaScript. Our js script was then imbedded into the site as an iframe.
 
 ## Interactivity
 
@@ -48,7 +53,7 @@ Eventually, this was the final product that we presented.
 ![rn](https://user-images.githubusercontent.com/35783893/39649064-7ae37be4-4fb2-11e8-9bdb-8d8b4fe9977d.PNG)
 
 After receiving feedback during the final presentation, this is our refined product.
-The baseline represents our base regression which is Male on a clear day at 5am. 
+The baseline represents our base regression which is Male on a clear day at 5am.
 ![tt2](https://user-images.githubusercontent.com/35783893/39649073-81c7e0bc-4fb2-11e8-985c-5b727230e044.PNG)
 ![rn2](https://user-images.githubusercontent.com/35783893/39649079-8585ef00-4fb2-11e8-820a-a800ed0b8379.PNG)
 
