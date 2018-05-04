@@ -33,6 +33,6 @@ The interactive portion of the site gives users a chance to explore the complex 
 
 ## Technology
 
-R Statistical Computing Software
+R Statistical Computing Software and 
 JavaScript p5
 
