@@ -23,10 +23,10 @@ After the data was selected, it was reclassified and/or categorized using R. The
 ![method_graph](https://user-images.githubusercontent.com/35783893/39645153-58719634-4fa5-11e8-9bab-60632744a93a.png)
 
 Our final regression model can be found in the following link.
-[regression_model](final regression code.txt)
+[regression_model](final_regression_code.txt)
 ## Web Design
 
-[citibike_logo](img/CitiBike_Logo_.svg)
+[citibike_logo](https://img/CitiBike_Logo_.svg)
 The color scheme chosen for our website design was to mirror that of the CitiBike logo. What we generally wanted to present through our project was the background data on CitiBike users itself, the key findings from our regression, as well as a place for users to explore the data themselves. We wanted to refrain from displaying our results in long scrollable pages, hence our decision to split the project into different pages.  
 
 The website itself was coded using simple html and css. Our interactivity portion used JavaScript. Our js script was then imbedded into the site as an iframe.
