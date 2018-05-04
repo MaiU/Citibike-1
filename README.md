@@ -2,6 +2,9 @@
 # Citibike
 created new working repository!
 created index website
+## Data
+[CitiBike Set](https://s3.amazonaws.com/tripdata/index.html)
+
 ## Process
 
 When we start talking about potential projects, we became interested in transportation medium in New York City. Due to a data availability and quality, we decided to use CitiBike data. We acknowledge that there are quite a few analyses done regarding CitiBike, yet we still believe it is worth revisiting since the service has expanded dramatically over the past couple of years. Also, many analyses that were conducted in the past were more based on descriptive statistics and trend studies, and we found a very few studies that focus on the projection of the rider numbers and bike time based on weather conditions. Therefore, we set the goal of our project as to estimate the number of riders and bike time based on people’s profile. The two main question asked in this projects are: (1) how many people like me will be on street with CitiBike when the weather is X, Y, and Z?; and (2) how long are they going to bike? 
