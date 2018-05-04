@@ -30,6 +30,15 @@ function setup(){
   button = select('#submit');
   button.mousePressed(calc);
  
+ 	background(255);
+	textSize(20);
+	textAlign(LEFT);
+	text('Baseline', 100, 25);
+	textSize(24);
+	text('1644 Riders', 100, 150);
+	noStroke();
+	fill(107);
+	rect(100, 50, 1644/8, 60);
   noLoop();
 }
 
@@ -62,10 +71,10 @@ function calc() {
 	console.log('temperature = ' + str(temp.value()));
     
 	//Wind Speed//	
-	var wind = select('#Wind');
-	console.log('wind = ' + str(wind.value()));
+	//var wind = select('#Wind');
+	//console.log('wind = ' + str(wind.value()));
     
- var test = Math.round(parseFloat(intercept) + parseFloat(score) + (parseFloat(birthYear.value()) * birthyearTT) + (parseFloat(temp.value()) * TempTT) + (parseFloat(wind.value()) * windTT));
+ var test = Math.round(parseFloat(intercept) + parseFloat(score) + (parseFloat(birthYear.value()) * birthyearTT) + (parseFloat(temp.value()) * TempTT));
  var lengthMultiplier = 10;
  
 
@@ -76,18 +85,37 @@ function calc() {
   
     //console.log(score);
 	background(255);
-	textSize(40);
-	textAlign(LEFT);
-	text(test + ' Riders', 280, 45);
+	//textSize(40);
+	//textAlign(LEFT);
+	//text(test + ' Riders', 280, 45);
 	
 	//for(var i = 35; i < test; i += 20) {
     //for(var j = 35; j < test;  j += 20) {
 		//noStroke();
 		//fill(37, 54, 113);
 		//rect(35, test *i , 13, 12);
+	fill(0);
+	 	textSize(20);
+	textAlign(LEFT);
+	text('Baseline', 100, 25);
+	textSize(24);
+	text('1644 Riders', 100, 150);
+	noStroke();
+	fill(107);
+	rect(100, 50, 1644/8, 60);
+	fill(0);
+	textSize(20);
+	textAlign(LEFT);
+	text('Predicted', 100, 250);
+	textSize(24);
+	text(test + ' Riders', 100, 370);
+	noStroke();
+	fill(37, 54, 113);
+	rect(100, 275, test/8, 60);
 	
-		
-	image(img, 100, 100, img.width/5, img.height/5);
+	 	
+
+	//image(img, 100, 100, img.width/5, img.height/5);
 	
 	
 

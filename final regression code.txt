@@ -1,0 +1,859 @@
+#########Citibike and Weather: DataViz Final Project##########
+#############################################Group 2##########
+
+setwd("/YOUR FILEPATH HERE/")
+
+##load data and selecting the second week of each month of 2016
+
+#January
+
+Jan2016 <- read.csv("2016_01.csv")
+
+Jan2016_W2 <- subset(Jan2016, Jan2016$X.1 == "4" | Jan2016$X.1 =="5"| Jan2016$X.1 == "6" | Jan2016$X.1 == "7" | Jan2016$X.1 == "8" 
+                     | Jan2016$X.1 == "9" | Jan2016$X.1 == "10",
+                     select =c(tripduration, starttime, stoptime, start.station.id, start.station.name, start.station.latitude, start.station.longitude, 
+                               end.station.id, end.station.name, end.station.latitude, end.station.latitude, end.station.longitude, bikeid, usertype, birth.year, gender, starttime.1, 
+                               X, X.1, X.2, X.3, X.4, X.5))
+
+Jan2016_W2 <- transform(Jan2016_W2, Trip_time = tripduration / 60, Rider_Num=1)
+
+
+
+#Feburary 
+Feb2016 <- read.csv("2016_02.csv")
+
+Feb2016_W2 <- subset(Feb2016, Feb2016$X.1 == "8" | Feb2016$X.1 =="9"| Feb2016$X.1 == "10" | Feb2016$X.1 == "11" | Feb2016$X.1 == "12" 
+                     | Feb2016$X.1 == "13" | Feb2016$X.1 == "14",
+                     select =c(tripduration, starttime, stoptime, start.station.id, start.station.name, start.station.latitude, start.station.longitude, 
+                               end.station.id, end.station.name, end.station.latitude, end.station.longitude, bikeid, usertype, birth.year, gender, starttime.1, 
+                               X, X.1, X.2, X.3, X.4, X.5))
+
+Feb2016_W2 <- transform(Feb2016_W2, Trip_time = tripduration / 60, Rider_Num=1)
+
+
+#March 
+Mar2016 <- read.csv("2016_03.csv")
+
+Mar2016_W2 <- subset(Mar2016, Mar2016$X.1 == "7" | Mar2016$X.1 =="8"| Mar2016$X.1 == "9" | Mar2016$X.1 == "10" | Mar2016$X.1 == "11" 
+                     | Mar2016$X.1 == "12" | Mar2016$X.1 == "13",
+                     select =c(tripduration, starttime, stoptime, start.station.id, start.station.name, start.station.latitude, start.station.longitude, 
+                               end.station.id, end.station.name, end.station.latitude, end.station.longitude, bikeid, usertype, birth.year, gender, starttime.1, 
+                               X, X.1, X.2, X.3, X.4, X.5))
+
+Mar2016_W2 <- transform(Mar2016_W2, Trip_time = tripduration / 60, Rider_Num=1)
+
+
+#April
+Apr2016 <- read.csv("2016_04.csv")
+
+Apr2016_W2 <- subset(Apr2016, Apr2016$X.1 == "4" | Apr2016$X.1 =="5" | Apr2016$X.1 == "6" | Apr2016$X.1 == "7" | Apr2016$X.1 == "8" 
+                     | Apr2016$X.1 == "9" | Apr2016$X.1 == "10",
+                     select =c(tripduration, starttime, stoptime, start.station.id, start.station.name, start.station.latitude, start.station.longitude, 
+                               end.station.id, end.station.name, end.station.latitude, end.station.longitude, bikeid, usertype, birth.year, gender, starttime.1, 
+                               X, X.1, X.2, X.3, X.4, X.5))
+
+Apr2016_W2 <- transform(Apr2016_W2, Trip_time = tripduration / 60, Rider_Num=1)
+
+#May
+May2016 <- read.csv("2016_05.csv")
+
+May2016_W2 <- subset(May2016, May2016$X.1 == "9" | May2016$X.1 =="10"| May2016$X.1 == "11" | May2016$X.1 == "12" | May2016$X.1 == "13" 
+                     | May2016$X.1 == "14" | May2016$X.1 == "15",
+                     select =c(tripduration, starttime, stoptime, start.station.id, start.station.name, start.station.latitude, start.station.longitude, 
+                               end.station.id, end.station.name, end.station.latitude, end.station.longitude, bikeid, usertype, birth.year, gender, starttime.1, 
+                               X, X.1, X.2, X.3, X.4, X.5))
+
+May2016_W2 <- transform(May2016_W2, Trip_time = tripduration / 60, Rider_Num=1)
+
+#June
+Jun2016 <- read.csv("2016_06.csv")
+
+Jun2016_W2 <- subset(Jun2016, May2016$X.1 == "6" | Jun2016$X.1 =="7"| Jun2016$X.1 == "8" | Jun2016$X.1 == "9" | Jun2016$X.1 == "10" 
+                     | Jun2016$X.1 == "11" | Jun2016$X.1 == "12",
+                     select =c(tripduration, starttime, stoptime, start.station.id, start.station.name, start.station.latitude, start.station.longitude, 
+                               end.station.id, end.station.name, end.station.latitude, end.station.longitude, bikeid, usertype, birth.year, gender, starttime.1, 
+                               X, X.1, X.2, X.3, X.4, X.5))
+
+Jun2016_W2 <- transform(Jun2016_W2, Trip_time = tripduration / 60, Rider_Num=1)
+
+
+#July 
+Jul2016 <- read.csv("2016_07.csv")
+
+Jul2016_W2 <- subset(Jul2016, Jul2016$X.1 == "4" | Jul2016$X.1 =="5"| Jul2016$X.1 == "6" | Jul2016$X.1 == "7" | Jul2016$X.1 == "8" 
+                     | Jul2016$X.1 == "9" | Jul2016$X.1 == "10",
+                     select =c(tripduration, starttime, stoptime, start.station.id, start.station.name, start.station.latitude, start.station.longitude, 
+                               end.station.id, end.station.name, end.station.latitude, end.station.longitude, bikeid, usertype, birth.year, gender, starttime.1, 
+                               X, X.1, X.2, X.3, X.4, X.5))
+
+Jul2016_W2 <- transform(Jul2016_W2, Trip_time = tripduration / 60, Rider_Num=1)
+
+
+
+#August
+Aug2016 <- read.csv("2016_08.csv")
+Aug2016_W2 <- subset(Aug2016, Aug2016$X.1 == "8" | Aug2016$X.1 =="9"| Aug2016$X.1 == "10" | Aug2016$X.1 == "11" | Aug2016$X.1 == "12" 
+                     | Aug2016$X.1 == "13" | Aug2016$X.1 == "14",
+                     select =c(tripduration, starttime, stoptime, start.station.id, start.station.name, start.station.latitude, start.station.longitude, 
+                               end.station.id, end.station.name, end.station.latitude, end.station.longitude, bikeid, usertype, birth.year, gender, starttime.1, 
+                               X, X.1, X.2, X.3, X.4, X.5))
+
+Aug2016_W2 <- transform(Aug2016_W2, Trip_time = tripduration / 60, Rider_Num=1)
+
+#September
+Sep2016 <- read.csv("2016_09.csv")
+Sep2016_W2 <- subset(Sep2016, Sep2016$X.1 == "5" | Sep2016$X.1 =="6"| Sep2016$X.1 == "7" | Sep2016$X.1 == "8" | Sep2016$X.1 == "9" 
+                     | Sep2016$X.1 == "10" | Sep2016$X.1 == "11",
+                     select =c(tripduration, starttime, stoptime, start.station.id, start.station.name, start.station.latitude, start.station.longitude, 
+                               end.station.id, end.station.name, end.station.latitude, end.station.longitude, bikeid, usertype, birth.year, gender, starttime.1, 
+                               X, X.1, X.2, X.3, X.4, X.5))
+
+Sep2016_W2 <- transform(Sep2016_W2, Trip_time = tripduration / 60, Rider_Num=1)
+
+#October 
+Oct2016 <- read.csv("2016_10.csv")
+Oct2016_W2 <- subset(Oct2016, Oct2016$X.1 == "3" | Oct2016$X.1 =="4"| Oct2016$X.1 == "5" | Oct2016$X.1 == "6" | Oct2016$X.1 == "7" 
+                     | Oct2016$X.1 == "8" | Oct2016$X.1 == "9",
+                     select =c(tripduration, starttime, stoptime, start.station.id, start.station.name, start.station.latitude, start.station.longitude, 
+                               end.station.id, end.station.name, end.station.latitude, end.station.longitude, bikeid, usertype, birth.year, gender, starttime.1, 
+                               X, X.1, X.2, X.3, X.4, X.5))
+
+Oct2016_W2 <- transform(Oct2016_W2, Trip_time = tripduration / 60, Rider_Num=1)
+
+#Novermber
+Nov2016 <- read.csv("2016_11.csv")
+Nov2016_W2 <- subset(Nov2016, Nov2016$X.1 == "7" | Nov2016$X.1 =="8"| Nov2016$X.1 == "9" | Nov2016$X.1 == "10" | Nov2016$X.1 == "11" 
+                     | Nov2016$X.1 == "12" | Nov2016$X.1 == "13",
+                     select =c(tripduration, starttime, stoptime, start.station.id, start.station.name, start.station.latitude, start.station.longitude, 
+                               end.station.id, end.station.name, end.station.latitude, end.station.longitude, bikeid, usertype, birth.year, gender, starttime.1, 
+                               X, X.1, X.2, X.3, X.4, X.5))
+
+Nov2016_W2 <- transform(Nov2016_W2, Trip_time = tripduration / 60, Rider_Num=1)
+
+#December
+Dec2016 <- read.csv("2016_12.csv")
+Dec2016_W2 <- subset(Dec2016, Dec2016$X.1 == "5" | Dec2016$X.1 =="6"| Dec2016$X.1 == "7" | Dec2016$X.1 == "8" | Dec2016$X.1 == "9" 
+                     | Dec2016$X.1 == "10" | Dec2016$X.1 == "11",
+                     select =c(tripduration, starttime, stoptime, start.station.id, start.station.name, start.station.latitude, start.station.longitude, 
+                               end.station.id, end.station.name, end.station.latitude, end.station.longitude, bikeid, usertype, birth.year, gender, starttime.1, 
+                               X, X.1, X.2, X.3, X.4, X.6))
+
+Dec2016_W2 <- transform(Dec2016_W2, Trip_time = tripduration / 60, Rider_Num=1)
+
+
+
+
+
+##Export to csv 
+setwd("/YOUR FILEPATH HERE/")
+
+write.csv(Jan2016_W2, "Apr15_Jan16W2.csv")
+write.csv(Feb2016_W2, "Apr15_Feb16W2.csv")
+write.csv(Mar2016_W2, "Apr15_Mar16W2.csv")
+write.csv(Apr2016_W2, "Apr15_Apr16W2.csv")
+write.csv(May2016_W2, "Apr15_May16W2.csv")
+write.csv(Jun2016_W2, "Apr15_Jun16W2.csv")
+write.csv(Jul2016_W2, "Apr15_Jul16W2.csv")
+write.csv(Aug2016_W2, "Apr15_Aug16W2.csv")
+write.csv(Sep2016_W2, "Apr15_Sep16W2.csv")
+write.csv(Oct2016_W2, "Apr15_Oct16W2.csv")
+write.csv(Nov2016_W2, "Apr15_Nov16W2.csv")
+write.csv(Dec2016_W2, "Apr15_Dec16W2.csv")
+
+
+###Weather data###
+setwd("/YOUR FILEPATH HERE/")
+
+temp16 <- read.csv("Temp16New.csv")
+write.csv(temp16, "Temp16New.csv")
+wind16 <- read.csv("wind16New.csv")
+write.csv(wind16, "wind16New.csv")
+wtype16 <-  read.csv("DescKaggle.csv") 
+write.csv(wtype16, "DescKaggleNew.csv")
+
+#Tempurature 
+temp16_CLN <- subset(temp16, temp16$month == "January" & temp16$date == "4" | temp16$month == "January" & temp16$date =="5"| temp16$month == "January" & temp16$date == "6" | 
+                       temp16$month == "January" & temp16$date == "7" | temp16$month == "January" & temp16$date == "8" | temp16$month == "January" & temp16$date == "9" |
+                       temp16$month == "January" & temp16$date == "10"|
+                       #February
+                       temp16$month == "February" & temp16$date == "8" | temp16$month == "February" & temp16$date =="9"| temp16$month == "February" & temp16$date == "10" | 
+                       temp16$month == "February" & temp16$date == "11" | temp16$month == "February" & temp16$date == "12" | temp16$month == "February" & temp16$date == "13" |
+                       temp16$month == "February" & temp16$date == "14"|
+                       #March
+                       temp16$month == "March" & temp16$date == "7" | temp16$month == "March" & temp16$date =="8"| temp16$month == "March" & temp16$date == "9" | 
+                       temp16$month == "March" & temp16$date == "10" | temp16$month == "March" & temp16$date == "11" | temp16$month == "March" & temp16$date == "12" |
+                       temp16$month == "March" & temp16$date == "13"|
+                       #April
+                       temp16$month == "April" & temp16$date == "4" | temp16$month == "April" & temp16$date =="5"| temp16$month == "April" & temp16$date == "6" | 
+                       temp16$month == "April" & temp16$date == "7" | temp16$month == "April" & temp16$date == "8" | temp16$month == "April" & temp16$date == "9" |
+                       temp16$month == "April" & temp16$date == "10"|
+                       #May
+                       temp16$month == "May" & temp16$date == "9" | temp16$month == "May" & temp16$date =="10"| temp16$month == "May" & temp16$date == "11" | 
+                       temp16$month == "May" & temp16$date == "12" | temp16$month == "May" & temp16$date == "13" | temp16$month == "May" & temp16$date == "14" |
+                       temp16$month == "May" & temp16$date == "15"|
+                       #June 
+                       temp16$month == "June" & temp16$date == "6" | temp16$month == "June" & temp16$date =="7" | temp16$month == "June" & temp16$date == "8" | 
+                       temp16$month == "June" & temp16$date == "9" | temp16$month == "June" & temp16$date == "10" | temp16$month == "June" & temp16$date == "11" |
+                       temp16$month == "June" & temp16$date == "12"|
+                       #July
+                       temp16$month == "July" & temp16$date == "4" | temp16$month == "July" & temp16$date =="5" | temp16$month == "July" & temp16$date == "6" | 
+                       temp16$month == "July" & temp16$date == "7" | temp16$month == "July" & temp16$date == "8" | temp16$month == "July" & temp16$date == "9" |
+                       temp16$month == "July" & temp16$date == "10"|
+                       #Aug
+                       temp16$month == "July" & temp16$date == "4" | temp16$month == "July" & temp16$date =="5" | temp16$month == "July" & temp16$date == "6" | 
+                       temp16$month == "July" & temp16$date == "7" | temp16$month == "July" & temp16$date == "8" | temp16$month == "July" & temp16$date == "9" |
+                       temp16$month == "July" & temp16$date == "10"|
+                       #Aug
+                       temp16$month == "August" & temp16$date == "8" | temp16$month == "August" & temp16$date =="9" | temp16$month == "August" & temp16$date == "10" | 
+                       temp16$month == "August" & temp16$date == "11" | temp16$month == "August" & temp16$date == "12" | temp16$month == "August" & temp16$date == "13" |
+                       temp16$month == "August" & temp16$date == "14"|
+                       #Sep
+                       temp16$month == "September" & temp16$date == "5" | temp16$month == "September" & temp16$date =="6" | temp16$month == "September" & temp16$date == "7" | 
+                       temp16$month == "September" & temp16$date == "8" | temp16$month == "September" & temp16$date == "9" | temp16$month == "September" & temp16$date == "10" |
+                       temp16$month == "September" & temp16$date == "11"|
+                       #Oct
+                       temp16$month == "October" & temp16$date == "3" | temp16$month == "October" & temp16$date =="4" | temp16$month == "October" & temp16$date == "5" | 
+                       temp16$month == "October" & temp16$date == "6" | temp16$month == "October" & temp16$date == "7" | temp16$month == "October" & temp16$date == "8" |
+                       temp16$month == "October" & temp16$date == "9"|
+                       #Nov
+                       temp16$month == "November" & temp16$date == "7" | temp16$month == "November" & temp16$date =="8" | temp16$month == "November" & temp16$date == "9" | 
+                       temp16$month == "November" & temp16$date == "10" | temp16$month == "November" & temp16$date == "11" | temp16$month == "November" & temp16$date == "12" |
+                       temp16$month == "November" & temp16$date == "13"|
+                       #Dec
+                       temp16$month == "December" & temp16$date == "5" | temp16$month == "December" & temp16$date =="6" | temp16$month == "December" & temp16$date == "7" | 
+                       temp16$month == "December" & temp16$date == "8" | temp16$month == "December" & temp16$date == "9" | temp16$month == "December" & temp16$date == "10" |
+                       temp16$month == "December" & temp16$date == "11", 
+                     
+                     
+                     select =c(datetime, Temp, day, month, date, year, hour, min, am_pm))
+
+##Wind
+wind16 <- read.csv("Wind16New.csv")
+wind16_CLN <- subset(wind16, wind16$month == "January" & wind16$date == "4" | wind16$month == "January" & wind16$date =="5"| wind16$month == "January" & wind16$date == "6" | 
+                       wind16$month == "January" & wind16$date == "7" | wind16$month == "January" & wind16$date == "8" | wind16$month == "January" & wind16$date == "9" |
+                       wind16$month == "January" & wind16$date == "10"|
+                       #February
+                       wind16$month == "February" & wind16$date == "8" | wind16$month == "February" & wind16$date =="9"| wind16$month == "February" & wind16$date == "10" | 
+                       wind16$month == "February" & wind16$date == "11" | wind16$month == "February" & wind16$date == "12" | wind16$month == "February" & wind16$date == "13" |
+                       wind16$month == "February" & wind16$date == "14"|
+                       #March
+                       wind16$month == "March" & wind16$date == "7" | wind16$month == "March" & wind16$date =="8"| wind16$month == "March" & wind16$date == "9" | 
+                       wind16$month == "March" & wind16$date == "10" | wind16$month == "March" & wind16$date == "11" | wind16$month == "March" & wind16$date == "12" |
+                       wind16$month == "March" & wind16$date == "13"|
+                       #April
+                       wind16$month == "April" & wind16$date == "4" | wind16$month == "April" & wind16$date =="5"| wind16$month == "April" & wind16$date == "6" | 
+                       wind16$month == "April" & wind16$date == "7" | wind16$month == "April" & wind16$date == "8" | wind16$month == "April" & wind16$date == "9" |
+                       wind16$month == "April" & wind16$date == "10"|
+                       #May
+                       wind16$month == "May" & wind16$date == "9" | wind16$month == "May" & wind16$date =="10"| wind16$month == "May" & wind16$date == "11" | 
+                       wind16$month == "May" & wind16$date == "12" | wind16$month == "May" & wind16$date == "13" | wind16$month == "May" & wind16$date == "14" |
+                       wind16$month == "May" & wind16$date == "15"|
+                       #June 
+                       wind16$month == "June" & wind16$date == "6" | wind16$month == "June" & wind16$date =="7" | wind16$month == "June" & wind16$date == "8" | 
+                       wind16$month == "June" & wind16$date == "9" | wind16$month == "June" & wind16$date == "10" | wind16$month == "June" & wind16$date == "11" |
+                       wind16$month == "June" & wind16$date == "12"|
+                       #July
+                       wind16$month == "July" & wind16$date == "4" | wind16$month == "July" & wind16$date =="5" | wind16$month == "July" & wind16$date == "6" | 
+                       wind16$month == "July" & wind16$date == "7" | wind16$month == "July" & wind16$date == "8" | wind16$month == "July" & wind16$date == "9" |
+                       wind16$month == "July" & wind16$date == "10"|
+                       #Aug
+                       wind16$month == "July" & wind16$date == "4" | wind16$month == "July" & wind16$date =="5" | wind16$month == "July" & wind16$date == "6" | 
+                       wind16$month == "July" & wind16$date == "7" | wind16$month == "July" & wind16$date == "8" | wind16$month == "July" & wind16$date == "9" |
+                       wind16$month == "July" & wind16$date == "10"|
+                       #Aug
+                       wind16$month == "August" & wind16$date == "8" | wind16$month == "August" & wind16$date =="9" | wind16$month == "August" & wind16$date == "10" | 
+                       wind16$month == "August" & wind16$date == "11" | wind16$month == "August" & wind16$date == "12" | wind16$month == "August" & wind16$date == "13" |
+                       wind16$month == "August" & wind16$date == "14"|
+                       #Sep
+                       wind16$month == "September" & wind16$date == "5" | wind16$month == "September" & wind16$date =="6" | wind16$month == "September" & wind16$date == "7" | 
+                       wind16$month == "September" & wind16$date == "8" | wind16$month == "September" & wind16$date == "9" | wind16$month == "September" & wind16$date == "10" |
+                       wind16$month == "September" & wind16$date == "11"|
+                       #Oct
+                       wind16$month == "October" & wind16$date == "3" | wind16$month == "October" & wind16$date =="4" | wind16$month == "October" & wind16$date == "5" | 
+                       wind16$month == "October" & wind16$date == "6" | wind16$month == "October" & wind16$date == "7" | wind16$month == "October" & wind16$date == "8" |
+                       wind16$month == "October" & wind16$date == "9"|
+                       #Nov
+                       wind16$month == "November" & wind16$date == "7" | wind16$month == "November" & wind16$date =="8" | wind16$month == "November" & wind16$date == "9" | 
+                       wind16$month == "November" & wind16$date == "10" | wind16$month == "November" & wind16$date == "11" | wind16$month == "November" & wind16$date == "12" |
+                       wind16$month == "November" & wind16$date == "13"|
+                       #Dec
+                       wind16$month == "December" & wind16$date == "5" | wind16$month == "December" & wind16$date =="6" | wind16$month == "December" & wind16$date == "7" | 
+                       wind16$month == "December" & wind16$date == "8" | wind16$month == "December" & wind16$date == "9" | wind16$month == "December" & wind16$date == "10" |
+                       wind16$month == "December" & wind16$date == "11", 
+                     
+                     
+                     select =c(datetime, Wind, day, month, date, year, hour, min, am_pm))
+
+##Weather Type
+wtype16 <- read.csv("wtype16_New.csv")
+wtype16_CLN <- subset(wtype16, wtype16$month == "January" & wtype16$date == "4" | wtype16$month == "January" & wtype16$date =="5"| wtype16$month == "January" & wtype16$date == "6" | 
+                        wtype16$month == "January" & wtype16$date == "7" | wtype16$month == "January" & wtype16$date == "8" | wtype16$month == "January" & wtype16$date == "9" |
+                        wtype16$month == "January" & wtype16$date == "10"|
+                        #February
+                        wtype16$month == "February" & wtype16$date == "8" | wtype16$month == "February" & wtype16$date =="9"| wtype16$month == "February" & wtype16$date == "10" | 
+                        wtype16$month == "February" & wtype16$date == "11" | wtype16$month == "February" & wtype16$date == "12" | wtype16$month == "February" & wtype16$date == "13" |
+                        wtype16$month == "February" & wtype16$date == "14"|
+                        #March
+                        wtype16$month == "March" & wtype16$date == "7" | wtype16$month == "March" & wtype16$date =="8"| wtype16$month == "March" & wtype16$date == "9" | 
+                        wtype16$month == "March" & wtype16$date == "10" | wtype16$month == "March" & wtype16$date == "11" | wtype16$month == "March" & wtype16$date == "12" |
+                        wtype16$month == "March" & wtype16$date == "13"|
+                        #April
+                        wtype16$month == "April" & wtype16$date == "4" | wtype16$month == "April" & wtype16$date =="5"| wtype16$month == "April" & wtype16$date == "6" | 
+                        wtype16$month == "April" & wtype16$date == "7" | wtype16$month == "April" & wtype16$date == "8" | wtype16$month == "April" & wtype16$date == "9" |
+                        wtype16$month == "April" & wtype16$date == "10"|
+                        #May
+                        wtype16$month == "May" & wtype16$date == "9" | wtype16$month == "May" & wtype16$date =="10"| wtype16$month == "May" & wtype16$date == "11" | 
+                        wtype16$month == "May" & wtype16$date == "12" | wtype16$month == "May" & wtype16$date == "13" | wtype16$month == "May" & wtype16$date == "14" |
+                        wtype16$month == "May" & wtype16$date == "15"|
+                        #June 
+                        wtype16$month == "June" & wtype16$date == "6" | wtype16$month == "June" & wtype16$date =="7" | wtype16$month == "June" & wtype16$date == "8" | 
+                        wtype16$month == "June" & wtype16$date == "9" | wtype16$month == "June" & wtype16$date == "10" | wtype16$month == "June" & wtype16$date == "11" |
+                        wtype16$month == "June" & wtype16$date == "12"|
+                        #July
+                        wtype16$month == "July" & wtype16$date == "4" | wtype16$month == "July" & wtype16$date =="5" | wtype16$month == "July" & wtype16$date == "6" | 
+                        wtype16$month == "July" & wtype16$date == "7" | wtype16$month == "July" & wtype16$date == "8" | wtype16$month == "July" & wtype16$date == "9" |
+                        wtype16$month == "July" & wtype16$date == "10"|
+                        #Aug
+                        wtype16$month == "July" & wtype16$date == "4" | wtype16$month == "July" & wtype16$date =="5" | wtype16$month == "July" & wtype16$date == "6" | 
+                        wtype16$month == "July" & wtype16$date == "7" | wtype16$month == "July" & wtype16$date == "8" | wtype16$month == "July" & wtype16$date == "9" |
+                        wtype16$month == "July" & wtype16$date == "10"|
+                        #Aug
+                        wtype16$month == "August" & wtype16$date == "8" | wtype16$month == "August" & wtype16$date =="9" | wtype16$month == "August" & wtype16$date == "10" | 
+                        wtype16$month == "August" & wtype16$date == "11" | wtype16$month == "August" & wtype16$date == "12" | wtype16$month == "August" & wtype16$date == "13" |
+                        wtype16$month == "August" & wtype16$date == "14"|
+                        #Sep
+                        wtype16$month == "September" & wtype16$date == "5" | wtype16$month == "September" & wtype16$date =="6" | wtype16$month == "September" & wtype16$date == "7" | 
+                        wtype16$month == "September" & wtype16$date == "8" | wtype16$month == "September" & wtype16$date == "9" | wtype16$month == "September" & wtype16$date == "10" |
+                        wtype16$month == "September" & wtype16$date == "11"|
+                        #Oct
+                        wtype16$month == "October" & wtype16$date == "3" | wtype16$month == "October" & wtype16$date =="4" | wtype16$month == "October" & wtype16$date == "5" | 
+                        wtype16$month == "October" & wtype16$date == "6" | wtype16$month == "October" & wtype16$date == "7" | wtype16$month == "October" & wtype16$date == "8" |
+                        wtype16$month == "October" & wtype16$date == "9"|
+                        #Nov
+                        wtype16$month == "November" & wtype16$date == "7" | wtype16$month == "November" & wtype16$date =="8" | wtype16$month == "November" & wtype16$date == "9" | 
+                        wtype16$month == "November" & wtype16$date == "10" | wtype16$month == "November" & wtype16$date == "11" | wtype16$month == "November" & wtype16$date == "12" |
+                        wtype16$month == "November" & wtype16$date == "13"|
+                        #Dec
+                        wtype16$month == "December" & wtype16$date == "5" | wtype16$month == "December" & wtype16$date =="6" | wtype16$month == "December" & wtype16$date == "7" | 
+                        wtype16$month == "December" & wtype16$date == "8" | wtype16$month == "December" & wtype16$date == "9" | wtype16$month == "December" & wtype16$date == "10" |
+                        wtype16$month == "December" & wtype16$date == "11", 
+                      
+                      
+                      select =c(wType, day, month, date, year, hour, min, am_pm))
+
+##Combining monthly data
+
+tot_16 <- rbind(data=Jan2016, data=Feb2016, data=Mar2016, data=Apr2016, data=May2016, data=Jun2016, data=Jul2016, data=Aug2016, data=Sep2016, data=Oct2016, data=Nov2016, data=Dec2016)
+summary(tot_16)
+table(tot_16$month)
+
+
+##Reclassify data into Weekday and Weekend 
+tot_16$weekday [tot_16$day  == "Monday"] <- 1
+tot_16$weekday [tot_16$day == "Tuesday"] <- 1
+tot_16$weekday [tot_16$day == "Wednesday"] <- 1
+tot_16$weekday [tot_16$day == "Thursday"] <- 1
+tot_16$weekday [tot_16$day == "Friday"] <- 1
+tot_16$weekday [tot_16$day == "Saturday"] <- 0
+tot_16$weekday [tot_16$day == "Sunday"] <- 0
+tot_16$weekday [tot_16$month == "July" & tot_16$day == '4'] <- 0
+tot_16$weekday [tot_16$month == "September" & tot_16$day == '5'] <- 0
+tot_16$weekday [tot_16$month == "November" & tot_16$day == '11'] <- 0
+
+##Check re-classification is correct
+table(tot_16$weekday)
+summary(tot_16$weekday)
+
+##Reclassify data into 4 time categories 
+tot_16$time [tot_16$hour == "5" & tot_16$am_pm == "AM"] <- 1
+tot_16$time [tot_16$hour == "6" & tot_16$am_pm == "AM"] <- 1
+tot_16$time [tot_16$hour == "7" & tot_16$am_pm == "AM"] <- 1
+tot_16$time [tot_16$hour == "8" & tot_16$am_pm == "AM"] <- 1
+tot_16$time [tot_16$hour == "9" & tot_16$am_pm == "AM"] <- 1
+tot_16$time [tot_16$hour == "10" & tot_16$am_pm == "AM"] <- 1
+tot_16$time [tot_16$hour == "11" & tot_16$am_pm == "AM"] <- 2
+tot_16$time [tot_16$hour == "12" & tot_16$am_pm == "PM"] <- 2
+tot_16$time [tot_16$hour == "1" & tot_16$am_pm == "PM"] <- 2
+tot_16$time [tot_16$hour == "2" & tot_16$am_pm == "PM"] <- 2
+tot_16$time [tot_16$hour == "3" & tot_16$am_pm == "PM"] <- 2
+tot_16$time [tot_16$hour == "4" & tot_16$am_pm == "PM"] <- 2
+tot_16$time [tot_16$hour == "5" & tot_16$am_pm == "PM"] <- 3
+tot_16$time [tot_16$hour == "6" & tot_16$am_pm == "PM"] <- 3
+tot_16$time [tot_16$hour == "7" & tot_16$am_pm == "PM"] <- 3
+tot_16$time [tot_16$hour == "8" & tot_16$am_pm == "PM"] <- 3
+tot_16$time [tot_16$hour == "9" & tot_16$am_pm == "PM"] <- 3
+tot_16$time [tot_16$hour == "10" & tot_16$am_pm == "PM"] <- 3
+tot_16$time [tot_16$hour == "11" & tot_16$am_pm == "PM"] <- 4
+tot_16$time [tot_16$hour == "12" & tot_16$am_pm == "AM"] <- 4
+tot_16$time [tot_16$hour == "1" & tot_16$am_pm == "AM"] <- 4
+tot_16$time [tot_16$hour == "2" & tot_16$am_pm == "AM"] <- 4
+tot_16$time [tot_16$hour == "3" & tot_16$am_pm == "AM"] <- 4
+tot_16$time [tot_16$hour == "4" & tot_16$am_pm == "AM"] <- 4
+
+##Check for the outliers 1
+table(tot_16$time)
+table(tot_16$Trip_time > 90)
+
+summary(tot_16$Trip_time)
+
+##Check for the outliers 2
+tot_16CLN <-tot_16[ which(tot_16$Trip_time < 120), ]
+hist(tot_16CLN$Trip_time)
+summary(tot_16CLN$Trip_time)
+table(tot_16CLN$Trip_time)
+
+hist(tot_16CLN$birth.year)
+summary(tot_16CLN$birth.year)
+table(tot_16CLN$birth.year)
+tot_16CLN <-tot_16[ which(tot_16$birth.year > 1932), ]
+hist(tot_16CLN$birth.year)
+
+##Check for NA values 
+colSums(is.na(tot_16CLN)| tot_16CLN == " ")
+
+
+###Weather data###
+
+
+#Temp: Reclassify by Weekday and Weekend 
+temp16_CLN$weekday [temp16_CLN$day  == "Monday"] <- 1
+temp16_CLN$weekday [temp16_CLN$day == "Tuesday"] <- 1
+temp16_CLN$weekday [temp16_CLN$day == "Wednesday"] <- 1
+temp16_CLN$weekday [temp16_CLN$day == "Thursday"] <- 1
+temp16_CLN$weekday [temp16_CLN$day == "Friday"] <- 1
+temp16_CLN$weekday [temp16_CLN$day == "Saturday"] <- 0
+temp16_CLN$weekday [temp16_CLN$day == "Sunday"] <- 0
+temp16_CLN$weekday [temp16_CLN$month == "July" & temp16_CLN$day == '4'] <- 0
+temp16_CLN$weekday [temp16_CLN$month == "September" & temp16_CLN$day == '5'] <- 0
+temp16_CLN$weekday [temp16_CLN$month == "November" & temp16_CLN$day == '11'] <- 0
+
+
+#Temp: Reclassify by 4 time categories
+temp16_CLN$time [temp16_CLN$hour == "5" & temp16_CLN$am_pm == "AM"] <- 1
+temp16_CLN$time [temp16_CLN$hour == "6" & temp16_CLN$am_pm == "AM"] <- 1
+temp16_CLN$time [temp16_CLN$hour == "7" & temp16_CLN$am_pm == "AM"] <- 1
+temp16_CLN$time [temp16_CLN$hour == "8" & temp16_CLN$am_pm == "AM"] <- 1
+temp16_CLN$time [temp16_CLN$hour == "9" & temp16_CLN$am_pm == "AM"] <- 1
+temp16_CLN$time [temp16_CLN$hour == "10" & temp16_CLN$am_pm == "AM"] <- 1
+temp16_CLN$time [temp16_CLN$hour == "11" & temp16_CLN$am_pm == "AM"] <- 2
+temp16_CLN$time [temp16_CLN$hour == "12" & temp16_CLN$am_pm == "PM"] <- 2
+temp16_CLN$time [temp16_CLN$hour == "1" & temp16_CLN$am_pm == "PM"] <- 2
+temp16_CLN$time [temp16_CLN$hour == "2" & temp16_CLN$am_pm == "PM"] <- 2
+temp16_CLN$time [temp16_CLN$hour == "3" & temp16_CLN$am_pm == "PM"] <- 2
+temp16_CLN$time [temp16_CLN$hour == "4" & temp16_CLN$am_pm == "PM"] <- 2
+temp16_CLN$time [temp16_CLN$hour == "5" & temp16_CLN$am_pm == "PM"] <- 3
+temp16_CLN$time [temp16_CLN$hour == "6" & temp16_CLN$am_pm == "PM"] <- 3
+temp16_CLN$time [temp16_CLN$hour == "7" & temp16_CLN$am_pm == "PM"] <- 3
+temp16_CLN$time [temp16_CLN$hour == "8" & temp16_CLN$am_pm == "PM"] <- 3
+temp16_CLN$time [temp16_CLN$hour == "9" & temp16_CLN$am_pm == "PM"] <- 3
+temp16_CLN$time [temp16_CLN$hour == "10" & temp16_CLN$am_pm == "PM"] <- 3
+temp16_CLN$time [temp16_CLN$hour == "11" & temp16_CLN$am_pm == "PM"] <- 4
+temp16_CLN$time [temp16_CLN$hour == "12" & temp16_CLN$am_pm == "AM"] <- 4
+temp16_CLN$time [temp16_CLN$hour == "1" & temp16_CLN$am_pm == "AM"] <- 4
+temp16_CLN$time [temp16_CLN$hour == "2" & temp16_CLN$am_pm == "AM"] <- 4
+temp16_CLN$time [temp16_CLN$hour == "3" & temp16_CLN$am_pm == "AM"] <- 4
+temp16_CLN$time [temp16_CLN$hour == "4" & temp16_CLN$am_pm == "AM"] <- 4
+
+write.csv(temp16_CLN, "temp16_CLN.csv")
+
+
+#Wind
+wind16_CLN$weektime.x [wind16_CLN$day  == "Monday"] <- 1
+wind16_CLN$weekday [wind16_CLN$day == "Tuesday"] <- 1
+wind16_CLN$weekday [wind16_CLN$day == "Wednesday"] <- 1
+wind16_CLN$weekday [wind16_CLN$day == "Thursday"] <- 1
+wind16_CLN$weekday [wind16_CLN$day == "Friday"] <- 1
+wind16_CLN$weekday [wind16_CLN$day == "Saturday"] <- 0
+wind16_CLN$weekday [wind16_CLN$day == "Sunday"] <- 0
+wind16_CLN$weekday [wind16_CLN$month == "July" & wind16_CLN$day == '4'] <- 0
+wind16_CLN$weekday [wind16_CLN$month == "September" & wind16_CLN$day == '5'] <- 0
+wind16_CLN$weekday [wind16_CLN$month == "November" & wind16_CLN$day == '11'] <- 0
+
+wind16_CLN$time [wind16_CLN$hour == "5" & wind16_CLN$am_pm == "AM"] <- 1
+wind16_CLN$time [wind16_CLN$hour == "6" & wind16_CLN$am_pm == "AM"] <- 1
+wind16_CLN$time [wind16_CLN$hour == "7" & wind16_CLN$am_pm == "AM"] <- 1
+wind16_CLN$time [wind16_CLN$hour == "8" & wind16_CLN$am_pm == "AM"] <- 1
+wind16_CLN$time [wind16_CLN$hour == "9" & wind16_CLN$am_pm == "AM"] <- 1
+wind16_CLN$time [wind16_CLN$hour == "10" & wind16_CLN$am_pm == "AM"] <- 1
+wind16_CLN$time [wind16_CLN$hour == "11" & wind16_CLN$am_pm == "AM"] <- 2
+wind16_CLN$time [wind16_CLN$hour == "12" & wind16_CLN$am_pm == "PM"] <- 2
+wind16_CLN$time [wind16_CLN$hour == "1" & wind16_CLN$am_pm == "PM"] <- 2
+wind16_CLN$time [wind16_CLN$hour == "2" & wind16_CLN$am_pm == "PM"] <- 2
+wind16_CLN$time [wind16_CLN$hour == "3" & wind16_CLN$am_pm == "PM"] <- 2
+wind16_CLN$time [wind16_CLN$hour == "4" & wind16_CLN$am_pm == "PM"] <- 2
+wind16_CLN$time [wind16_CLN$hour == "5" & wind16_CLN$am_pm == "PM"] <- 3
+wind16_CLN$time [wind16_CLN$hour == "6" & wind16_CLN$am_pm == "PM"] <- 3
+wind16_CLN$time [wind16_CLN$hour == "7" & wind16_CLN$am_pm == "PM"] <- 3
+wind16_CLN$time [wind16_CLN$hour == "8" & wind16_CLN$am_pm == "PM"] <- 3
+wind16_CLN$time [wind16_CLN$hour == "9" & wind16_CLN$am_pm == "PM"] <- 3
+wind16_CLN$time [wind16_CLN$hour == "10" & wind16_CLN$am_pm == "PM"] <- 3
+wind16_CLN$time [wind16_CLN$hour == "11" & wind16_CLN$am_pm == "PM"] <- 4
+wind16_CLN$time [wind16_CLN$hour == "12" & wind16_CLN$am_pm == "AM"] <- 4
+wind16_CLN$time [wind16_CLN$hour == "1" & wind16_CLN$am_pm == "AM"] <- 4
+wind16_CLN$time [wind16_CLN$hour == "2" & wind16_CLN$am_pm == "AM"] <- 4
+wind16_CLN$time [wind16_CLN$hour == "3" & wind16_CLN$am_pm == "AM"] <- 4
+wind16_CLN$time [wind16_CLN$hour == "4" & wind16_CLN$am_pm == "AM"] <- 4
+
+write.csv(wind16_CLN, "wind16_CLN.csv")
+
+#WeatherType: reclassify by Weekday and Weekend 
+wtype16_CLN$weekday [wtype16_CLN$day  == "Monday"] <- 1
+wtype16_CLN$weekday [wtype16_CLN$day == "Tuesday"] <- 1
+wtype16_CLN$weekday [wtype16_CLN$day == "Wednesday"] <- 1
+wtype16_CLN$weekday [wtype16_CLN$day == "Thursday"] <- 1
+wtype16_CLN$weekday [wtype16_CLN$day == "Friday"] <- 1
+wtype16_CLN$weekday [wtype16_CLN$day == "Saturday"] <- 0
+wtype16_CLN$weekday [wtype16_CLN$day == "Sunday"] <- 0
+wtype16_CLN$weekday [wtype16_CLN$month == "July" & wtype16_CLN$day == '4'] <- 0
+wtype16_CLN$weekday [wtype16_CLN$month == "September" & wtype16_CLN$day == '5'] <- 0
+wtype16_CLN$weekday [wtype16_CLN$month == "November" & wtype16_CLN$day == '11'] <- 0
+
+#Makeing weather type binary
+wtype16_CLN$clear [wtype16_CLN$wType  == "sky is clear"] <- 1
+wtype16_CLN$clear [wtype16_CLN$wType == "broken clouds"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "few clouds"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "overcast clouds"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "scattered clouds"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "drizzle"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "heavy intensity drizzle"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "heavy intensity rain"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "light intensity drizzle"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "light rain"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "moderate rain"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "freezing rain"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "fog"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "haze"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "mist"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "sand "] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "smoke"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "heavy snow"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "snow"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "light snow"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "proximity thunderstorm"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "thunderstorm"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "thunderstorm with heavy rain"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "thunderstorm with light drizzle"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "thunderstorm with light rain"] <- 0
+wtype16_CLN$clear [wtype16_CLN$wType == "thunderstorm with rain"] <- 0
+
+wtype16_CLN$cloudy [wtype16_CLN$wType  == "sky is clear"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "broken clouds"] <- 1
+wtype16_CLN$cloudy [wtype16_CLN$wType == "few clouds"] <- 1
+wtype16_CLN$cloudy [wtype16_CLN$wType == "overcast clouds"] <- 1
+wtype16_CLN$cloudy [wtype16_CLN$wType == "scattered clouds"] <- 1
+wtype16_CLN$cloudy [wtype16_CLN$wType == "drizzle"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "heavy intensity drizzle"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "heavy intensity rain"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "light intensity drizzle"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "light rain"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "moderate rain"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "freezing rain"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "fog"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "haze"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "mist"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "sand "] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "smoke"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "heavy snow"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "snow"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "light snow"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "proximity thunderstorm"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "thunderstorm"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "thunderstorm with heavy rain"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "thunderstorm with light drizzle"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "thunderstorm with light rain"] <- 0
+wtype16_CLN$cloudy [wtype16_CLN$wType == "thunderstorm with rain"] <- 0
+
+wtype16_CLN$rain [wtype16_CLN$wType  == "sky is clear"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "broken clouds"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "few clouds"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "overcast clouds"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "scattered clouds"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "drizzle"] <- 1
+wtype16_CLN$rain [wtype16_CLN$wType == "heavy intensity drizzle"] <- 1
+wtype16_CLN$rain [wtype16_CLN$wType == "heavy intensity rain"] <- 1
+wtype16_CLN$rain [wtype16_CLN$wType == "light intensity drizzle"] <- 1
+wtype16_CLN$rain [wtype16_CLN$wType == "light rain"] <- 1
+wtype16_CLN$rain [wtype16_CLN$wType == "moderate rain"] <- 1
+wtype16_CLN$rain [wtype16_CLN$wType == "freezing rain"] <- 1
+wtype16_CLN$rain [wtype16_CLN$wType == "fog"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "haze"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "mist"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "sand "] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "smoke"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "heavy snow"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "snow"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "light snow"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "proximity thunderstorm"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "thunderstorm"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "thunderstorm with heavy rain"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "thunderstorm with light drizzle"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "thunderstorm with light rain"] <- 0
+wtype16_CLN$rain [wtype16_CLN$wType == "thunderstorm with rain"] <- 0
+
+wtype16_CLN$fog [wtype16_CLN$wType  == "sky is clear"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "broken clouds"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "few clouds"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "overcast clouds"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "scattered clouds"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "drizzle"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "heavy intensity drizzle"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "heavy intensity rain"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "light intensity drizzle"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "light rain"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "moderate rain"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "freezing rain"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "fog"] <- 1
+wtype16_CLN$fog [wtype16_CLN$wType == "haze"] <- 1
+wtype16_CLN$fog [wtype16_CLN$wType == "mist"] <- 1
+wtype16_CLN$fog [wtype16_CLN$wType == "sand "] <- 1
+wtype16_CLN$fog [wtype16_CLN$wType == "smoke"] <- 1
+wtype16_CLN$fog [wtype16_CLN$wType == "heavy snow"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "snow"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "light snow"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "proximity thunderstorm"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "thunderstorm"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "thunderstorm with heavy rain"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "thunderstorm with light drizzle"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "thunderstorm with light rain"] <- 0
+wtype16_CLN$fog [wtype16_CLN$wType == "thunderstorm with rain"] <- 0
+
+wtype16_CLN$snow [wtype16_CLN$wType  == "sky is clear"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "broken clouds"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "few clouds"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "overcast clouds"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "scattered clouds"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "drizzle"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "heavy intensity drizzle"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "heavy intensity rain"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "light intensity drizzle"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "light rain"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "moderate rain"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "freezing rain"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "fog"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "haze"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "mist"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "sand "] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "smoke"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "heavy snow"] <- 1
+wtype16_CLN$snow [wtype16_CLN$wType == "snow"] <- 1
+wtype16_CLN$snow [wtype16_CLN$wType == "light snow"] <- 1
+wtype16_CLN$snow [wtype16_CLN$wType == "proximity thunderstorm"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "thunderstorm"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "thunderstorm with heavy rain"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "thunderstorm with light drizzle"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "thunderstorm with light rain"] <- 0
+wtype16_CLN$snow [wtype16_CLN$wType == "thunderstorm with rain"] <- 0
+
+wtype16_CLN$tstorm [wtype16_CLN$wType  == "sky is clear"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "broken clouds"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "few clouds"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "overcast clouds"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "scattered clouds"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "drizzle"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "heavy intensity drizzle"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "heavy intensity rain"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "light intensity drizzle"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "light rain"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "moderate rain"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "freezing rain"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "fog"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "haze"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "mist"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "sand "] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "smoke"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "heavy snow"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "snow"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "light snow"] <- 0
+wtype16_CLN$tstorm [wtype16_CLN$wType == "proximity thunderstorm"] <- 1
+wtype16_CLN$tstorm [wtype16_CLN$wType == "thunderstorm"] <- 1
+wtype16_CLN$tstorm [wtype16_CLN$wType == "thunderstorm with heavy rain"] <- 1
+wtype16_CLN$tstorm [wtype16_CLN$wType == "thunderstorm with light drizzle"] <- 1
+wtype16_CLN$tstorm [wtype16_CLN$wType == "thunderstorm with light rain"] <- 1
+wtype16_CLN$tstorm [wtype16_CLN$wType == "thunderstorm with rain"] <- 1
+
+
+#weatherType: Reclassify by 4 time categories
+wtype16_CLN$time [wtype16_CLN$hour == "5" & wtype16_CLN$am_pm == "AM"] <- 1
+wtype16_CLN$time [wtype16_CLN$hour == "6" & wtype16_CLN$am_pm == "AM"] <- 1
+wtype16_CLN$time [wtype16_CLN$hour == "7" & wtype16_CLN$am_pm == "AM"] <- 1
+wtype16_CLN$time [wtype16_CLN$hour == "8" & wtype16_CLN$am_pm == "AM"] <- 1
+wtype16_CLN$time [wtype16_CLN$hour == "9" & wtype16_CLN$am_pm == "AM"] <- 1
+wtype16_CLN$time [wtype16_CLN$hour == "10" & wtype16_CLN$am_pm == "AM"] <- 1
+wtype16_CLN$time [wtype16_CLN$hour == "11" & wtype16_CLN$am_pm == "AM"] <- 2
+wtype16_CLN$time [wtype16_CLN$hour == "12" & wtype16_CLN$am_pm == "PM"] <- 2
+wtype16_CLN$time [wtype16_CLN$hour == "1" & wtype16_CLN$am_pm == "PM"] <- 2
+wtype16_CLN$time [wtype16_CLN$hour == "2" & wtype16_CLN$am_pm == "PM"] <- 2
+wtype16_CLN$time [wtype16_CLN$hour == "3" & wtype16_CLN$am_pm == "PM"] <- 2
+wtype16_CLN$time [wtype16_CLN$hour == "4" & wtype16_CLN$am_pm == "PM"] <- 2
+wtype16_CLN$time [wtype16_CLN$hour == "5" & wtype16_CLN$am_pm == "PM"] <- 3
+wtype16_CLN$time [wtype16_CLN$hour == "6" & wtype16_CLN$am_pm == "PM"] <- 3
+wtype16_CLN$time [wtype16_CLN$hour == "7" & wtype16_CLN$am_pm == "PM"] <- 3
+wtype16_CLN$time [wtype16_CLN$hour == "8" & wtype16_CLN$am_pm == "PM"] <- 3
+wtype16_CLN$time [wtype16_CLN$hour == "9" & wtype16_CLN$am_pm == "PM"] <- 3
+wtype16_CLN$time [wtype16_CLN$hour == "10" & wtype16_CLN$am_pm == "PM"] <- 3
+wtype16_CLN$time [wtype16_CLN$hour == "11" & wtype16_CLN$am_pm == "PM"] <- 4
+wtype16_CLN$time [wtype16_CLN$hour == "12" & wtype16_CLN$am_pm == "AM"] <- 4
+wtype16_CLN$time [wtype16_CLN$hour == "1" & wtype16_CLN$am_pm == "AM"] <- 4
+wtype16_CLN$time [wtype16_CLN$hour == "2" & wtype16_CLN$am_pm == "AM"] <- 4
+wtype16_CLN$time [wtype16_CLN$hour == "3" & wtype16_CLN$am_pm == "AM"] <- 4
+wtype16_CLN$time [wtype16_CLN$hour == "4" & wtype16_CLN$am_pm == "AM"] <- 4
+
+table(wtype16_CLN$wType)
+colSums(is.na(wtype16_CLN)| wtype16_CLN == " ")
+write.csv(wtype16_CLN, "wType16_CLN.csv")
+
+#Joining tot16_CLN and emp16_CLN
+install.packages("dplyr")
+library(dplyr)
+
+tot_16CLN <- mutate(tot_16CLN, cmb = paste (month, date, hour, am_pm))
+wind16_CLN <- mutate(wind16_CLN, cmb = paste(month, date, hour, am_pm))
+temp16_CLN <- mutate(temp16_CLN, cmb = paste(month, date, hour, am_pm))
+wtype16_CLN <- mutate(wtype16_CLN, cmb = paste(month, date, hour, am_pm))
+summary(wind16_CLN$month)
+summary(temp16_CLN$month)
+Data2016 <- merge(tot_16CLN, temp16_CLN, by='cmb')
+Data2016_1 <- merge(Data2016, wind16_CLN, by='cmb')
+Data2016_2 <- merge(Data2016_1, wtype16_CLN, by = 'cmb')
+table(Data2016$cmb)
+summary(Data2016$month.x)
+summary(Data2016$month.y)
+
+write.csv(tot_16CLN, "tot16_CLN2.csv")
+
+
+##Drop duplicated columns 
+Data2016 <- Data2016[-c(28, 30:36)]
+Data2016_1 <- Data2016_1[-c(29, 31:39)]
+Data2016_2 <- Data2016_2[-c(31:39)]
+Data2016_2 <- Data2016_2[-c(2)]
+
+setwd("/YOUR FILEPATH HERE/")
+Data2016_Final <- Data2016_2
+write.csv(Data2016_Final, "Data2016_Final.csv")
+
+#Check if the weather type classificaiton is correct 
+table(Data2016_Final$clear)
+table(Data2016_Final$cloudy)
+table(Data2016_Final$rain)
+table(Data2016_Final$fog)
+table(Data2016_Final$snow)
+table(Data2016_Final$tstorm)
+
+
+#Time: making 4 time categories into binary variables 
+Data2016_Final$FiveAM [Data2016_Final$time.x  == "1"] <- 1
+Data2016_Final$FiveAM [Data2016_Final$time.x == "2"] <- 0
+Data2016_Final$FiveAM [Data2016_Final$time.x == "3"] <- 0
+Data2016_Final$FiveAM [Data2016_Final$time.x == "4"] <- 0
+
+Data2016_Final$ElevAM [Data2016_Final$time.x  == "1"] <- 0
+Data2016_Final$ElevAM [Data2016_Final$time.x == "2"] <- 1
+Data2016_Final$ElevAM [Data2016_Final$time.x == "3"] <- 0
+Data2016_Final$ElevAM [Data2016_Final$time.x == "4"] <- 0
+
+Data2016_Final$FivePM [Data2016_Final$time.x  == "1"] <- 0
+Data2016_Final$FivePM [Data2016_Final$time.x == "2"] <- 0
+Data2016_Final$FivePM [Data2016_Final$time.x == "3"] <- 1
+Data2016_Final$FivePM [Data2016_Final$time.x == "4"] <- 0
+
+Data2016_Final$ElevPM [Data2016_Final$time.x  == "1"] <- 0
+Data2016_Final$ElevPM [Data2016_Final$time.x == "2"] <- 0
+Data2016_Final$ElevPM [Data2016_Final$time.x == "3"] <- 0
+Data2016_Final$ElevPM [Data2016_Final$time.x == "4"] <- 1
+
+
+#Reasisgning Gender#
+
+Data2016_Final$gender[Data2016_Final$gender == "2"] <- "0" #Female
+Data2016_Final$gender[Data2016_Final$gender == "1"] <- "1" #MALE
+Data2016_Final$gender[Data2016_Final$gender == "0"] <- NA #unknown 
+
+Data2016_Final <- Data2016_Final[complete.cases(Data2016_Final$gender),]
+
+
+#Fixing the rider number
+
+ag <- aggregate(Rider_Num~cmb, Data2016_Final, FUN=sum) 
+
+Data2016_Final <- merge(Data2016_Final, ag, by='cmb')
+
+table(Data2016_Final$Rider_Num.y)
+
+
+#Fixing Age
+Data2016_Final$Year <- 2016
+Data2016_Final$age <- Data2016_Final$Year - Data2016_Final$birth.year
+
+
+####Write a csv: The Complete and Clean Data####
+Wrire.csv(Data2016_Final, "Data2016_Final.csv")
+
+
+##Regression Model
+Data2016_Final$time.X <- factor(Data2016_Final$time.x)
+
+#########LOAD DATA HERE##########
+setwd("/YOUR FILEPATH HERE/")
+Data2016_Final <- read.csv("Data2016_Final.csv", header=T, na.strings=c("","NA"))
+Data2016_Final <- Data2016_Final[-c(1)]
+
+
+####Set a reference levle for user type###
+Data2016_Final$usertype <- relevel(Data2016_Final$usertype, ref = "Customer")
+
+#####Outcome Rider Number#####
+#All in Model 
+lnModel1 <- lm(Rider_Num.y ~ gender + usertype + age + ElevAM + FivePM + ElevPM + weekday.x +Temp + Wind + cloudy + rain + fog + snow + tstorm, data = Data2016_Final)
+summary(lnModel1)
+
+lnModel2 <- lm(Rider_Num.y ~ ElevAM + FivePM + ElevPM + weekday.x +Temp + Wind + cloudy + rain + fog + snow + tstorm, data = Data2016_Final)
+summary(lnModel2)
+
+#Sunny
+lnModelSunny <- lm(Rider_Num ~ ElevAM + FivePM + ElevPM + weekday.x +Temp + Wind + clear, data = Data2016_Final)
+summary(lnModelSunny)
+
+#Rain
+lnModelRain <- lm(Rider_Num ~ ElevAM + FivePM + ElevPM + weekday.x +Temp + Wind + rain, data = Data2016_Final)
+summary(lnModelRain)
+
+#Coludy
+lnModelCloudy<- lm(Rider_Num ~ ElevAM + FivePM + ElevPM + weekday.x +Temp + Wind + cloudy, data= Data2016_Final)
+summary(lnModelCloudy)
+
+#fog
+lnModelFog<- lm(Rider_Num ~ ElevAM + FivePM + ElevPM + weekday.x +Temp + Wind + fog, data= Data2016_Final)
+summary(lnModelFog)
+
+#tstorm
+lnModeltstorm<- lm(Rider_Num ~ ElevAM + FivePM + ElevPM + weekday.x +Temp + Wind + tstorm, data= Data2016_Final)
+summary(lnModeltstorm)
+
+#######Outcome Trip_time#########
+#All in Model 
+lnModel1T <- lm(Trip_time ~ gender + usertype + age + ElevAM + ElevPM + FivePM + ElevPM + weekday.x +Temp + Wind + cloudy + rain + fog + snow + tstorm, data = Data2016_Final)
+summary(lnModel1T)
+
+#Sunny
+lnModelSunnyT <- lm(Trip_time ~ ElevAM +  FivePM + ElevPM + weekday.x +Temp + Wind + clear, data = Data2016_Final)
+summary(lnModelSunnyT)
+
+#Rain
+lnModelRainT <- lm(Trip_time ~ ElevAM + FivePM + ElevPM + weekday.x +Temp + Wind + rain, data = Data2016_Final)
+summary(lnModelRainT)
+
+#Coludy
+lnModelCloudyT<- lm(Trip_time ~ ElevAM + FivePM + ElevPM + weekday.x +Temp + Wind + cloudy, data= Data2016_Final)
+summary(lnModelCloudyT)
+
+#fog
+lnModelFogT<- lm(Trip_time ~ ElevAM + FivePM + ElevPM + weekday.x +Temp + Wind + fog, data= Data2016_Final)
+summary(lnModelFogT)
+
+#tstorm
+lnModeltstormT<- lm(Trip_time ~ ElevAM + FivePM + ElevPM + weekday.x +Temp + Wind + tstorm, data= Data2016_Final)
+summary(lnModeltstormT)
+
+
+

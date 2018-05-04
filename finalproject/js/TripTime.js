@@ -29,8 +29,20 @@ function setup(){
   textSize (14);
   button = select('#submit');
   button.mousePressed(calc);
- 
-  noLoop();
+ 	stroke(0);
+	strokeWeight(1);
+	ellipse(180,240,250,250);
+	stroke(107);
+	strokeWeight(15);
+	arc(180,240,250,250,1.5*PI,(23/30*PI-HALF_PI+0.0001));
+	stroke(0);
+	strokeWeight(0);
+	textSize(32);
+	textAlign(CENTER);
+	text(23 + ' Minutes', 180, 250);
+	textSize(20);
+	text('Baseline', 180, 430);
+	noLoop();
 }
 
 
@@ -62,27 +74,44 @@ function calc() {
 	console.log('temperature = ' + str(temp.value()));
     
 	//Wind Speed//	
-	var wind = select('#Wind');
-	console.log('wind = ' + str(wind.value()));
+
     
- var test = Math.round(parseFloat(intercept) + parseFloat(score) + (parseFloat(birthYear.value()) * birthyearTT) + (parseFloat(temp.value()) * TempTT) + (parseFloat(wind.value()) * windTT));
+ var test = Math.round(parseFloat(intercept) + parseFloat(score) + (parseFloat(birthYear.value()) * birthyearTT) + (parseFloat(temp.value()) * TempTT));
 	
 	//score = parseFloat(genderValue) + (parseFloat(birthYear.value()) * birthyearTT) +  parseFloat(userValue) + parseFloat(dayValue);
 		
   
     //console.log(score);
+	
 	background(255);
+	
+	 	stroke(0);
+	strokeWeight(1);
+	ellipse(180,240,250,250);
+	stroke(107);
+	strokeWeight(15);
+	arc(180,240,250,250,1.5*PI,(23/30*PI-HALF_PI+0.0001));
+	stroke(0);
+	strokeWeight(0);
+	textSize(32);
+	textAlign(CENTER);
+	text(23 + ' Minutes', 180, 250);
+	textSize(20);
+	text('Baseline', 180, 430);
 	
 	stroke(0);
 	strokeWeight(1);
-	ellipse(250,250,300,300);
+	ellipse(500,240,250,250);
 	stroke(37, 54, 113);
 	strokeWeight(15);
-	arc(250,250,300,300,1.5*PI,(test/30*PI-HALF_PI+0.0001));
+	arc(500,240,250,250,1.5*PI,(test/30*PI-HALF_PI+0.0001));
 	stroke(0);
 	strokeWeight(0);
-	textSize(40);
+	textSize(32);
 	textAlign(CENTER);
-	text(test + ' Minutes', 250, 260);
+	text(test + ' Minutes', 500, 250);
+	textSize(20);
+	text('Predicted', 500, 430);
+
 }
 
