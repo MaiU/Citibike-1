@@ -31,3 +31,8 @@ The interactive portion of the site gives users a chance to explore the complex 
 ![tt2](https://user-images.githubusercontent.com/35783893/39649073-81c7e0bc-4fb2-11e8-985c-5b727230e044.PNG)
 ![rn2](https://user-images.githubusercontent.com/35783893/39649079-8585ef00-4fb2-11e8-820a-a800ed0b8379.PNG)
 
+## Technology
+
+R Statistical Computing Software
+JavaScript p5
+
